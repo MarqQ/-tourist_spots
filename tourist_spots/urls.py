@@ -25,11 +25,11 @@ from core.api.viewsets import TouristSpotViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'attractions', AttractionViewSet)
-router.register(r'locations', LocationViewSet)
-router.register(r'commentreviews', CommentViewSet)
-router.register(r'reviews', ReviewViewSet)
-router.register(r'tourist_spots', TouristSpotViewSet)
+router.register(r'attractions', AttractionViewSet, basename='attractions')
+router.register(r'locations', LocationViewSet, basename='locations')
+router.register(r'commentreviews', CommentViewSet, basename='commentreviews')
+router.register(r'reviews', ReviewViewSet, basename='reviews')
+router.register(r'tourist_spots', TouristSpotViewSet, basename='tourist_spot')
 
 urlpatterns = [
     path('', include(router.urls)),

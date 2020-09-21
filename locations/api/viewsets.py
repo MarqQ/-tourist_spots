@@ -4,5 +4,8 @@ from .serializers import LocationSerializer
 
 
 class LocationViewSet(ModelViewSet):
-    queryset = Location.objects.all()
+
     serializer_class = LocationSerializer
+
+    def get_queryset(self):
+        return Location.objects.filter()
