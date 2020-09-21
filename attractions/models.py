@@ -7,5 +7,5 @@ class Attraction(models.Model):
     schedule = models.TextField()
     pal = models.IntegerField()
 
-    def __(self):
+    def __str__(self):
         return self.name
