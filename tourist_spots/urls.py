@@ -17,11 +17,19 @@ from django.contrib import admin
 from django.conf.urls import include
 from django.urls import path
 from rest_framework import routers
+from attractions.api.viewsets import AttractionViewSet
+from locations.api.viewsets import LocationViewSet
+from commentreviews.api.viewsets import CommentViewSet
+from reviews.api.viewsets import ReviewViewSet
 from core.api.viewsets import TouristSpotViewSet
 
 
 router = routers.DefaultRouter()
-router.register(r'tourist_spot', TouristSpotViewSet)
+router.register(r'attractions', AttractionViewSet)
+router.register(r'locations', LocationViewSet)
+router.register(r'commentreviews', CommentViewSet)
+router.register(r'reviews', ReviewViewSet)
+router.register(r'tourist_spots', TouristSpotViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
