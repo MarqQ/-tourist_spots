@@ -1,8 +1,8 @@
 from django.db import models
 from attractions.models import Attraction
 from commentreviews.models import Comment
-from reviews.models import Review
 from locations.models import Location
+from reviews.models import Review
 
 
 class TouristSpot(models.Model):
