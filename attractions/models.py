@@ -6,6 +6,7 @@ class Attraction(models.Model):
     description = models.TextField()
     schedule = models.TextField()
     pal = models.IntegerField()
+    picture = models.ImageField(upload_to='attraction', null=True, blank=True)
 
     def __str__(self):
         return self.name
