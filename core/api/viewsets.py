@@ -1,5 +1,7 @@
+from rest_framework.authentication import TokenAuthentication
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 from core.models import TouristSpot
 from .serializers import TouristSpotSerializer
@@ -9,6 +11,8 @@ class TouristSpotViewSet(ModelViewSet):
 
     serializer_class = TouristSpotSerializer
     filter_backends = [SearchFilter]
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
     search_fields = ('name', 'description', 'location__location1', 'location__location2', 'location__city',
                      'location__state', 'location__country')
 
